@@ -1,3 +1,5 @@
+// language: dart
+// FILE: lib/main.dart
 import 'package:flutter/material.dart';
 import 'UI/liste.dart'; 
 
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Articles Store',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
       home: const ListeArticles(), 
     );
