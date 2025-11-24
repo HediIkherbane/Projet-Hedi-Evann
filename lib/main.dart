@@ -1,10 +1,17 @@
-// language: dart
-// FILE: lib/main.dart
 import 'package:flutter/material.dart';
-import 'UI/liste.dart'; 
+import 'UI/liste.dart';
+import 'UI/favoris.dart';
+import 'UI/panier.dart'; 
+import 'package:provider/provider.dart';
+import 'UI/article_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ArticleProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +25,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ListeArticles(), 
+      routes: {
+        "/favoris": (context) => const FavorisPage(),
+        "/panier" : (context) => const PanierPage(),
+      },
+
+      home: const ListeArticles(),
     );
   }
 }
