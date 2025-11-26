@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // attendre le chargement
+   
     if (skipWelcome == null) {
       return const MaterialApp(
         home: Scaffold(
@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
         "/panier": (_) => const PanierPage(),
       },
 
-      // Si la case "Ne plus afficher" a été cochée → on va directement à ListeArticles
+      
       home: skipWelcome! ? const ListeArticles() : const WelcomePage(),
     );
   }
